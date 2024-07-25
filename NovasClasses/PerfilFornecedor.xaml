@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NovasClasses.PerfilFornecedor"
+             BackgroundColor="#4a6276">
+
+    <StackLayout HorizontalOptions="Center" 
+                 VerticalOptions="Center" 
+                 BackgroundColor="#4a6276">
+
+        <Frame BackgroundColor="#4a4a4a" 
+               CornerRadius="10" 
+               Padding="20">
+
+            <StackLayout>
+
+                <Label Text="PERFIL DO FORNECEDOR" 
+                       FontSize="Large" 
+                       HorizontalOptions="Center" 
+                       TextColor="Black"/>
+
+                
+                <StackLayout Padding="10">
+
+                    <StackLayout Orientation="Horizontal">
+
+                        <Label Text="Nome:" 
+                               TextColor="White" 
+                               VerticalOptions="Center"/>
+
+                        <Entry x:Name="NomeEntry" 
+                               Placeholder="Insira o nome" 
+                               HorizontalOptions="FillAndExpand"/>
+
+                        <Button Text="EDITAR" 
+                                Command="{Binding EditarNomeCommand}" 
+                                TextColor="Black" 
+                                BackgroundColor="Transparent"/>
+
+                    </StackLayout>
+
+
+                    <StackLayout Orientation="Horizontal" 
+                                 Margin="0,20,0,0">
+
+                        <Label Text="Email:" 
+                               TextColor="White" 
+                               VerticalOptions="Center"/>
+
+                        <Entry x:Name="EmailEntry" 
+                               Placeholder="Insira o email" 
+                               HorizontalOptions="FillAndExpand"/>
+
+                        <Button Text="EDITAR" 
+                                Command="{Binding EditarEmailCommand}" 
+                                TextColor="Black" 
+                                BackgroundColor="Transparent"/>
+
+                    </StackLayout>
+
+
+                    <StackLayout Orientation="Horizontal" 
+                                 Margin="0,20,0,0">
+
+                        <Label Text="Endereço:" 
+                               TextColor="White" 
+                               VerticalOptions="Center"/>
+
+                        <Entry x:Name="EnderecoEntry" 
+                               Placeholder="Insira o endereço" 
+                               HorizontalOptions="FillAndExpand"/>
+
+                        <Button Text="EDITAR" 
+                                Command="{Binding EditarEnderecoCommand}" 
+                                TextColor="Black" 
+                                BackgroundColor="Transparent"/>
+
+                    </StackLayout>
+
+
+                    <StackLayout Orientation="Horizontal" 
+                                 Margin="0,20,0,0">
+
+                        <Label Text="Produtos:" 
+                               TextColor="White" 
+                               VerticalOptions="Center"/>
+
+                        <Entry x:Name="ProdutosEntry" 
+                               Placeholder="Insira os produtos" 
+                               HorizontalOptions="FillAndExpand"/>
+
+                        <Button Text="EDITAR" 
+                                Command="{Binding EditarProdutosCommand}" 
+                                TextColor="Black" 
+                                BackgroundColor="Transparent"/>
+
+                    </StackLayout>
+
+
+                    <StackLayout Orientation="Horizontal" 
+                                 Margin="0,20,0,0">
+
+                        <Label Text="Id:" 
+                               TextColor="White" 
+                               VerticalOptions="Center"/>
+
+                        <Entry x:Name="IdEntry" 
+                               Placeholder="Insira o ID" 
+                               HorizontalOptions="FillAndExpand"/>
+
+                        <Button Text="EDITAR" 
+                                Command="{Binding EditarIdCommand}" 
+                                TextColor="Black" 
+                                BackgroundColor="Transparent"/>
+
+                    </StackLayout>
+
+                </StackLayout>
+
+
+                <Button Text="DELETAR FORNECEDOR" 
+                        TextColor="White" 
+                        BackgroundColor="Black" 
+                        Command="{Binding DeletarCommand}"
+                        Margin="0,20,0,0"/>
+
+                
+                <Button Text="VOLTAR" 
+                        TextColor="White" 
+                        BackgroundColor="DarkRed"
+                        Command="{Binding VoltarCommand}"
+                        Margin="0,10,0,0"/>
+
+            </StackLayout>
+
+        </Frame>
+
+    </StackLayout>
+
+</ContentPage>
+

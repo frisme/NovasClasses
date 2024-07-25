@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NovasClasses.CadastroCliente"
+
+             Title="Cadastro">
+
+    <ContentPage.Content>
+
+        <Grid BackgroundColor="#556577">
+        
+            <StackLayout HorizontalOptions="Center" 
+                         VerticalOptions="Center">
+
+                <Image Source="usuario.jpg"
+                       HeightRequest="100"
+                       WidthRequest="100" />
+
+                <Entry x:Name="NomeEntry" 
+                       Placeholder="Nome" 
+                       BackgroundColor="White" 
+                       TextColor="Black" />
+
+                <Entry x:Name="EmailEntry" 
+                       Placeholder="E-mail" 
+                       Keyboard="Email" 
+                       BackgroundColor="White" 
+                       TextColor="Black" />
+
+                <Entry x:Name="EnderecoEntry" 
+                       Placeholder="Endereço" 
+                       BackgroundColor="White" 
+                       TextColor="Black" />
+
+                <Entry x:Name="SenhaEntry" 
+                       Placeholder="Senha" 
+                       IsPassword="True" 
+                       BackgroundColor="White" 
+                       TextColor="Black" />
+
+                <Entry x:Name="ConfirmarSenhaEntry" 
+                       Placeholder="Confirmar Senha" 
+                       IsPassword="True" 
+                       BackgroundColor="White" 
+                       TextColor="Black" />
+
+                <Button Text="Cadastrar" 
+                        BackgroundColor="#555555" 
+                        TextColor="White" 
+                        Clicked="OnCadastrarClicked" />
+
+                <Button Text="Voltar" 
+                        BackgroundColor="#8B0000" 
+                        TextColor="White" 
+                        Clicked="OnVoltarClicked" />
+
+            </StackLayout>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

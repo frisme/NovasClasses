@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NovasClasses.CadastrarMateriaPrima"
+             Title="Cadastrar Matéria Prima">
+
+    <ContentPage.Content>
+
+        <Grid BackgroundColor="#556577">
+
+            <StackLayout HorizontalOptions="Center" 
+                         VerticalOptions="Center" 
+                         Padding="20" 
+                         Spacing="10">
+
+                <Label Text="CADASTRAR MATÉRIA PRIMA" 
+                       FontSize="Large" 
+                       TextColor="Black" 
+                       HorizontalOptions="Center" />
+
+
+                <StackLayout Spacing="5">
+
+                    <Label Text="Tipo:" 
+                           TextColor="Black"/>
+
+                    <Entry x:Name="TipoEntry" 
+                           Placeholder="" 
+                           BackgroundColor="White" 
+                           TextColor="Black" />
+
+                </StackLayout>
+
+                
+                <StackLayout Spacing="5">
+
+                    <Label Text="Quantidade:" 
+                           TextColor="Black"/>
+
+                    <Entry x:Name="QuantidadeEntry" 
+                           Placeholder="" 
+                           BackgroundColor="White" 
+                           TextColor="Black" />
+
+                </StackLayout>
+
+                
+                <StackLayout Spacing="5">
+
+                    <Label Text="Fornecedor:" 
+                           TextColor="Black"/>
+
+                    <Entry x:Name="FornecedorEntry" 
+                           Placeholder="" 
+                           BackgroundColor="White" 
+                           TextColor="Black" />
+
+                </StackLayout>
+
+                
+                <StackLayout Spacing="5">
+
+                    <Label Text="Id:" 
+                           TextColor="Black"/>
+
+                    <Entry x:Name="IdEntry" 
+                           Placeholder="" 
+                           BackgroundColor="White" 
+                           TextColor="Black" />
+
+                </StackLayout>
+
+
+                <StackLayout Orientation="Horizontal" 
+                             Spacing="10">
+
+                    <Button Text="CONFIRMAR" 
+                            BackgroundColor="#555555" 
+                            TextColor="White" 
+                            HorizontalOptions="FillAndExpand" 
+                            Clicked="OnConfirmarClicked"/>
+
+                    <Button Text="VOLTAR" 
+                            BackgroundColor="#8B0000" 
+                            TextColor="White" 
+                            HorizontalOptions="FillAndExpand" 
+                            Clicked="OnVoltarClicked"/>
+
+                </StackLayout>
+
+            </StackLayout>
+
+        </Grid>
+
+    </ContentPage.Content>
+
+</ContentPage>
+
