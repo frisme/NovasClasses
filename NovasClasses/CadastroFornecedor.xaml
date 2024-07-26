@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NovasClasses.CadastroFornecedor"
+             Title="Cadastro de Fornecedor">
+
+
+    <ContentPage.Resources>
+
+        <ResourceDictionary>
+
+            <Style x:Key="LabelStyle" 
+                   TargetType="Label">
+
+                <Setter Property="TextColor" 
+                        Value="Black" />
+
+                <Setter Property="FontSize" 
+                        Value="Medium" />
+
+                <Setter Property="VerticalOptions" 
+                        Value="Center" />
+
+            </Style>
+
+            <Style x:Key="EntryStyle" 
+                   TargetType="Entry">
+
+                <Setter Property="BackgroundColor" 
+                        Value="White" />
+
+                <Setter Property="HeightRequest" 
+                        Value="40" />
+
+                <Setter Property="Margin" 
+                        Value="0,10,0,10" />
+
+            </Style>
+
+            <Style x:Key="ButtonStyle" 
+                   TargetType="Button">
+
+                <Setter Property="HeightRequest" 
+                        Value="50" />
+
+                <Setter Property="CornerRadius" 
+                        Value="10" />
+
+                <Setter Property="FontAttributes" 
+                        Value="Bold" />
+
+            </Style>
+
+        </ResourceDictionary>
+
+    </ContentPage.Resources>
+
+
+    <ContentPage.Content>
+
+        <StackLayout Padding="30" 
+                     BackgroundColor="#3C3F41">
+
+            <Label Text="Cadastro de Fornecedor"
+                   HorizontalOptions="Center"
+                   TextColor="Black"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   Margin="0,0,0,30" />
+
+            <StackLayout>
+
+                <Label Text="Nome:" 
+                       Style="{StaticResource LabelStyle}" />
+
+                <Entry x:Name="NomeEntry" 
+                       Style="{StaticResource EntryStyle}" />
+
+                
+                <Label Text="Email:" 
+                       Style="{StaticResource LabelStyle}" />
+
+                <Entry x:Name="EmailEntry" 
+                       Style="{StaticResource EntryStyle}" 
+                       Keyboard="Email" />
+
+                
+                <Label Text="Endereço:" 
+                       Style="{StaticResource LabelStyle}" />
+
+                <Entry x:Name="EnderecoEntry" 
+                       Style="{StaticResource EntryStyle}" />
+
+                
+                <Label Text="Produtos:" 
+                       Style="{StaticResource LabelStyle}" />
+
+                <Entry x:Name="ProdutosEntry" 
+                       Style="{StaticResource EntryStyle}" />
+
+                
+                <Label Text="Id:" 
+                       Style="{StaticResource LabelStyle}" />
+
+                <Entry x:Name="IdEntry" 
+                       Style="{StaticResource EntryStyle}" 
+                       Keyboard="Numeric" />
+
+            </StackLayout>
+
+
+            <StackLayout Orientation="Horizontal" 
+                         HorizontalOptions="Center" 
+                         Margin="0,30,0,0">
+
+                <Button Text="Confirmar" 
+                        Style="{StaticResource ButtonStyle}" 
+                        BackgroundColor="Gray" 
+                        TextColor="White" 
+                        Clicked="OnConfirmarClicked"/>
+
+                <Button Text="Voltar" 
+                        Style="{StaticResource ButtonStyle}" 
+                        BackgroundColor="DarkRed" 
+                        TextColor="White" 
+                        Clicked="OnVoltarClicked" 
+                        Margin="20,0,0,0"/>
+
+            </StackLayout>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+
+</ContentPage>
+
