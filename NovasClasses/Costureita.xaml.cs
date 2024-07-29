@@ -1,9 +1,10 @@
+using System;
 using System.Windows.Input;
 using Microsoft.Maui.Controls;
 
 namespace NovasClasses
 {
-    public partial class DeletarFornecedor : ContentPage
+    public partial class Costureira : ContentPage
     {
         public ICommand EditarTipoCommand { get; }
         public ICommand EditarQuantidadeCommand { get; }
@@ -12,7 +13,7 @@ namespace NovasClasses
         public ICommand ConfirmarCommand { get; }
         public ICommand VoltarCommand { get; }
 
-        public DeletarFornecedor()
+        public Costureira()
         {
             InitializeComponent();
 
@@ -56,7 +57,7 @@ namespace NovasClasses
 
             // Adicione sua lógica de confirmação aqui
 
-            await DisplayAlert("Confirmação", "Fornecedor deletado com sucesso!", "OK");
+            await DisplayAlert("Confirmação", "Informações confirmadas com sucesso!", "OK");
         }
 
         private async void OnVoltar()
