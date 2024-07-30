@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NovasClasses.CadastrarAcabamento"
+             Title="Cadastrar Acabamento">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="LabelStyle" 
+                   TargetType="Label">
+                <Setter Property="TextColor" 
+                        Value="White"/>
+                <Setter Property="FontSize" 
+                        Value="Medium"/>
+                <Setter Property="VerticalOptions" 
+                        Value="Center"/>
+            </Style>
+
+            <Style x:Key="EntryStyle" 
+                   TargetType="Entry">
+                <Setter Property="BackgroundColor" 
+                        Value="White"/>
+                <Setter Property="HeightRequest" 
+                        Value="40"/>
+                <Setter Property="Margin" 
+                        Value="0,10,0,10"/>
+            </Style>
+
+            <Style x:Key="ButtonStyle" 
+                   TargetType="Button">
+                <Setter Property="HeightRequest" 
+                        Value="50"/>
+                <Setter Property="CornerRadius" 
+                        Value="10"/>
+                <Setter Property="FontAttributes" 
+                        Value="Bold"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout Padding="30" 
+                     BackgroundColor="#4a6276">
+            <Frame BackgroundColor="#3C3F41" 
+                   CornerRadius="10" 
+                   Padding="20">
+                <StackLayout>
+                    <Label Text="CADASTRAR ACABAMENTO"
+                           HorizontalOptions="Center"
+                           Style="{StaticResource LabelStyle}"
+                           FontSize="Large"
+                           FontAttributes="Bold"
+                           Margin="0,0,0,30"/>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Text="Tipo:" 
+                               Grid.Row="0" 
+                               Grid.Column="0" 
+                               Style="{StaticResource LabelStyle}"/>
+                        <Entry x:Name="TipoEntry" 
+                               Grid.Row="0" 
+                               Grid.Column="1" 
+                               Placeholder="Insira o tipo" 
+                               Style="{StaticResource EntryStyle}"/>
+
+                        <Label Text="Quantidade:" 
+                               Grid.Row="1" 
+                               Grid.Column="0" 
+                               Style="{StaticResource LabelStyle}"/>
+                        <Entry x:Name="QuantidadeEntry" 
+                               Grid.Row="1" 
+                               Grid.Column="1" 
+                               Placeholder="Insira a quantidade" 
+                               Style="{StaticResource EntryStyle}"/>
+
+                        <Label Text="Cor:" 
+                               Grid.Row="2" 
+                               Grid.Column="0" 
+                               Style="{StaticResource LabelStyle}"/>
+                        <Entry x:Name="CorEntry" 
+                               Grid.Row="2" 
+                               Grid.Column="1" 
+                               Placeholder="Insira a cor" 
+                               Style="{StaticResource EntryStyle}"/>
+
+                        <Label Text="Id:" 
+                               Grid.Row="3" 
+                               Grid.Column="0" 
+                               Style="{StaticResource LabelStyle}"/>
+                        <Entry x:Name="IdEntry" 
+                               Grid.Row="3" 
+                               Grid.Column="1" 
+                               Placeholder="Insira o id" 
+                               Style="{StaticResource EntryStyle}"/>
+                    </Grid>
+
+                    <Button Text="CONFIRMAR"
+                            Style="{StaticResource ButtonStyle}"
+                            BackgroundColor="Black"
+                            TextColor="White"
+                            Command="{Binding ConfirmarCommand}"
+                            Margin="0,20,0,0"/>
+
+                    <Button Text="VOLTAR"
+                            Style="{StaticResource ButtonStyle}"
+                            BackgroundColor="DarkRed"
+                            TextColor="White"
+                            Command="{Binding VoltarCommand}"
+                            Margin="0,10,0,0"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
