@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NovasClasses.CadastrarItemEstoque"
+             BackgroundColor="#556677"
+             Title="CADASTRARR ITEM ESTOQUE">
+
+    <Grid Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Label Text="CADASTRARR ITEM ESTOQUE"
+               FontSize="Large"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               Grid.Row="0" />
+
+        <StackLayout Grid.Row="1" 
+                     Spacing="20">
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Tipo:" 
+                       VerticalOptions="Center" />
+                <Entry x:Name="TipoEntry" 
+                       WidthRequest="200" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Quantidade:" 
+                       VerticalOptions="Center" />
+                <Entry x:Name="QuantidadeEntry" 
+                       WidthRequest="200" 
+                       Keyboard="Numeric" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Fornecedor:" 
+                       VerticalOptions="Center" />
+                <Entry x:Name="FornecedorEntry" 
+                       WidthRequest="200" />
+            </StackLayout>
+            
+        </StackLayout>
+
+        <StackLayout Grid.Row="2" 
+                     Orientation="Horizontal"
+                     HorizontalOptions="Center"
+                     Spacing="20">
+            <Button Text="CONFIRMAR"
+                    BackgroundColor="Gray"
+                    TextColor="Black"
+                    Clicked="OnConfirmarClicked" />
+            <Button Text="VOLTAR"
+                    BackgroundColor="Red"
+                    TextColor="White"
+                    Clicked="OnVoltarClicked" />
+        </StackLayout>
+
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,33 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NovasClasses.Estoque"
+             Title="Estoque">
+
+    <ListView ItemsSource="{Binding ListaProdutos}">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid>
+                        <Image Source="{Binding Imagem}" />
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="0" 
+                                Text="Levar à Área de Confecção" />
+                        <Button Grid.Column="1" 
+                                Text="Descartar do Estoque" />
+                    </Grid>
+
+                </ViewCell>
+
+            </DataTemplate>
+
+        </ListView.ItemTemplate>
+
+    </ListView>
+
+    <Button Text="Voltar" 
+            HorizontalOptions="Center" 
+            Margin="20, 0" />
+</ContentPage>

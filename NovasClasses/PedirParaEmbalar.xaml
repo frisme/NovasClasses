@@ -1,0 +1,49 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NovasClasses.Embalagem"
+             Title="PEDIR PARA EMBALAR">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Label Text="PEDIR PARA EMBALAR" 
+               FontSize="Title" 
+               HorizontalTextAlignment="Center" />
+        <StackLayout Grid.Row="1" 
+                     Orientation="Horizontal" 
+                     HorizontalOptions="Center">
+            <Image Source="user.png" /> 
+            <Label Text="usuário" 
+                   VerticalTextAlignment="Center" />
+        </StackLayout>
+        <Entry Placeholder="Nº da Camisa" 
+               Grid.Row="2" 
+               HorizontalOptions="FillAndExpand" />
+        <Button Text="CONFIRMAR" 
+                Grid.Row="3" 
+                HorizontalOptions="Center" />
+        <Image Source="camisa.png" 
+               Grid.Row="2" 
+               Grid.Column="0" 
+               HorizontalOptions="Center" 
+               VerticalOptions="Center" />
+        <StackLayout Grid.Row="3" 
+                     Orientation="Horizontal" 
+                     Spacing="20" 
+                     HorizontalOptions="Center">
+            <Button Text="VOLTAR" />
+            <Button Text="PRÓXIMO" />
+        </StackLayout>
+
+    </Grid>
+
+</ContentPage>
