@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NovasClasses.ApagarPedido"
+             BackgroundColor="#556677"
+             Title="APAGAR PEDIDO">
+
+    <Grid Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Label Text="VOCÊ DESEJA APAGAR O PEDIDO?"
+               FontSize="Large"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               Grid.Row="0" />
+
+        <StackLayout Grid.Row="1" Orientation="Horizontal"
+                     HorizontalOptions="Center"
+                     Spacing="40"
+                     VerticalOptions="Center">
+            <Button Text="SIM"
+                    BackgroundColor="Transparent"
+                    TextColor="Red"
+                    FontAttributes="Bold"
+                    Clicked="OnSimClicked" />
+            <Image Source="warning_icon.png"
+                   WidthRequest="40"
+                   HeightRequest="40" />
+            <Button Text="NÃO"
+                    BackgroundColor="Transparent"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    Clicked="OnNaoClicked" />
+        </StackLayout>
+    </Grid>
+</ContentPage>

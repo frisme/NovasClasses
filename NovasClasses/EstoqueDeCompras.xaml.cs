@@ -8,18 +8,19 @@ namespace NovasClasses
         {
             InitializeComponent();
 
-            // Criar os botões dos quadrados
-            // ...
-
-            // Exemplo de como mostrar o popup quando um quadrado é clicado
-            foreach (var child in Grid.Children)
+            // Exemplo de criação de botões programaticamente
+            for (int i = 0; i < 3; i++)
             {
-                if (child is Button button)
+                for (int j = 0; j < 3; j++)
                 {
+                    var button = new Button { Text = $"Item {i},{j}" };
+                    Grid.SetRow(button, i);
+                    Grid.SetColumn(button, j);
                     button.Clicked += (sender, args) =>
                     {
-                        myPopup.IsOpen = true;
+                        MeusPopup.IsVisible = true;
                     };
+                    SucoDeAbacate.Children.Add(button);
                 }
             }
         }
@@ -27,14 +28,14 @@ namespace NovasClasses
         private void LevarParaConfeccao(object sender, EventArgs e)
         {
             // Lógica para levar o produto para a área de confecção
-            myPopup.IsOpen = false;
+            MeusPopup.IsVisible = false;
             // ...
         }
 
         private void Descartar(object sender, EventArgs e)
         {
             // Lógica para descartar o produto
-            myPopup.IsOpen = false;
+            MeusPopup.IsVisible = false;
             // ...
         }
     }

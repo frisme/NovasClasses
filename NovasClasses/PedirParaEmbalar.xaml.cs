@@ -19,14 +19,28 @@ namespace NovasClasses
         public string NumeroCamisa
         {
             get => _numeroCamisa;
-            set => SetProperty(ref _numeroCamisa, value);
+            set
+            {
+                if (_numeroCamisa != value)
+                {
+                    _numeroCamisa = value;
+                    OnPropertyChanged();
+                }
+            }
         }
 
         private string _usuarioNome;
         public string UsuarioNome
         {
             get => _usuarioNome;
-            set => SetProperty(ref _usuarioNome, value);
+            set
+            {
+                if (_usuarioNome != value)
+                {
+                    _usuarioNome = value;
+                    OnPropertyChanged();
+                }
+            }
         }
 
         public Command ConfirmarCommand { get; }
@@ -47,19 +61,19 @@ namespace NovasClasses
         {
             // Lógica para confirmar a embalagem
             // Exemplo: Enviar o número da camisa para um serviço
-            await DisplayAlert("Confirmado", $"Camisa número {NumeroCamisa} enviada para embalagem.", "OK");
+            await Application.Current.MainPage.DisplayAlert("Confirmado", $"Camisa número {NumeroCamisa} enviada para embalagem.", "OK");
         }
 
         private async void OnVoltar()
         {
             // Lógica para voltar à página anterior
-            await Navigation.PopAsync();
+            await Application.Current.MainPage.Navigation.PopAsync();
         }
 
         private async void OnProximo()
         {
             // Lógica para navegar para a próxima página
-            await Navigation.PushAsync(new ProximaPagina()); // Substituir por nome da próxima página
+            await Application.Current.MainPage.Navigation.PushAsync(new EntregaDoPedido()); // Substituir por nome da próxima página
         }
     }
 }

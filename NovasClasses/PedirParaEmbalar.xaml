@@ -17,33 +17,47 @@
 
         <Label Text="PEDIR PARA EMBALAR" 
                FontSize="Title" 
-               HorizontalTextAlignment="Center" />
+               HorizontalOptions="Center"
+               Grid.Row="0" />
+
         <StackLayout Grid.Row="1" 
                      Orientation="Horizontal" 
                      HorizontalOptions="Center">
             <Image Source="user.png" /> 
             <Label Text="usuário" 
-                   VerticalTextAlignment="Center" />
-        </StackLayout>
-        <Entry Placeholder="Nº da Camisa" 
-               Grid.Row="2" 
-               HorizontalOptions="FillAndExpand" />
-        <Button Text="CONFIRMAR" 
-                Grid.Row="3" 
-                HorizontalOptions="Center" />
-        <Image Source="camisa.png" 
-               Grid.Row="2" 
-               Grid.Column="0" 
-               HorizontalOptions="Center" 
-               VerticalOptions="Center" />
-        <StackLayout Grid.Row="3" 
-                     Orientation="Horizontal" 
-                     Spacing="20" 
-                     HorizontalOptions="Center">
-            <Button Text="VOLTAR" />
-            <Button Text="PRÓXIMO" />
+                   VerticalTextAlignment="Center" 
+                   HorizontalOptions="Center" />
         </StackLayout>
 
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Entry Placeholder="Nº da Camisa" 
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="Center"
+                   Text="{Binding NumeroCamisa}" />
+            <Image Source="camisa.png" 
+                   Grid.Column="1" 
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Center" />
+        </Grid>
+
+        <StackLayout Grid.Row="3" 
+                     Orientation="Vertical" 
+                     Spacing="20" 
+                     HorizontalOptions="Center">
+            <Button Text="CONFIRMAR" 
+                    Command="{Binding ConfirmarCommand}" />
+            <StackLayout Orientation="Horizontal" Spacing="20">
+                <Button Text="VOLTAR" 
+                        Command="{Binding VoltarCommand}" />
+                <Button x:Name="ProximaPagina"
+                        Text="PRÓXIMO" 
+                        Command="{Binding ProximoCommand}" />
+            </StackLayout>
+        </StackLayout>
     </Grid>
 
 </ContentPage>

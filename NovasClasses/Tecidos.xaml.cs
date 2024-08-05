@@ -1,4 +1,5 @@
 using Microsoft.Maui.Controls;
+using Microsoft.Maui.Graphics;
 
 namespace NovasClasses
 {
@@ -12,13 +13,16 @@ namespace NovasClasses
             int numLinhas = 3;
             int numColunas = 3;
 
-            gridTecidos.RowDefinitions.Add(new RowDefinition());
-            gridTecidos.RowDefinitions.Add(new RowDefinition());
-            gridTecidos.RowDefinitions.Add(new RowDefinition());
+            // Adicionar linhas e colunas dinamicamente
+            for (int i = 0; i < numLinhas; i++)
+            {
+                gridTecidos.RowDefinitions.Add(new RowDefinition { Height = GridLength.Star });
+            }
 
-            gridTecidos.ColumnDefinitions.Add(new ColumnDefinition());
-            gridTecidos.ColumnDefinitions.Add(new ColumnDefinition());
-            gridTecidos.ColumnDefinitions.Add(new ColumnDefinition());
+            for (int j = 0; j < numColunas; j++)
+            {
+                gridTecidos.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Star });
+            }
 
             // Criar os botões dos tecidos
             for (int i = 0; i < numLinhas; i++)
@@ -27,18 +31,20 @@ namespace NovasClasses
                 {
                     var button = new Button
                     {
-                        BackgroundColor = Color.White,
-                        BorderColor = Color.Gray,
+                        BackgroundColor = Colors.White,
+                        BorderColor = Colors.Gray,
                         BorderWidth = 2,
                         // Adicione aqui a imagem do tecido (se tiver)
-                        // button.ImageSource = "tecido.png";
+                        // ImageSource = "tecido.png"
                     };
-                    gridTecidos.Children.Add(button, j, i);
+
+                    GalinhaDoente.Add(button, j, i);
+
                     // Adicione um evento de clique para cada botão (opcional)
                     button.Clicked += (sender, args) =>
                     {
                         // Lógica para quando um tecido é clicado (ex: mostrar detalhes)
-                        // ...
+                        DisplayAlert("Tecido", "Você clicou em um tecido.", "OK");
                     };
                 }
             }
@@ -47,7 +53,8 @@ namespace NovasClasses
         private void IrParaCompras(object sender, EventArgs e)
         {
             // Lógica para direcionar o usuário para a tela de compras
-            // ...
+            // Exemplo: Navegar para outra página
+            Navigation.PushAsync(new Compras()); // Substitua "ComprasPage" pelo nome da página correta
         }
     }
 }

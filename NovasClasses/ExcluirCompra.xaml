@@ -12,27 +12,33 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.Row="0">
+        <!-- Grid Interno para os botões -->
+        <Grid Grid.Row="0" 
+              x:Name="DenilsonSamambaia">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                
-                
-
-            <Button Grid.Row="0" 
-                    Grid.Column="0" 
-                    BackgroundColor="White" 
-                    BorderColor="Gray" />
-            </Grid>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+        </Grid>
 
         <Image Source="lixeira.png" 
                Grid.Row="1" 
                Grid.Column="2" 
-               HorizontalAlignment="End" 
-               VerticalAlignment="Center" />
+               HorizontalOptions="End" 
+               VerticalOptions="Center" />
 
-        <Button Text="Jogar Fora" 
+        <Button x:Name="JogarForaButton" 
+                Text="Jogar Fora" 
                 Grid.Row="1" 
                 Grid.Column="0" />
-        <Button Text="Reutilizar" 
+        <Button x:Name="ReutilizarButton" 
+            Text="Reutilizar" 
                 Grid.Row="1" 
                 Grid.Column="1" />
     </Grid>

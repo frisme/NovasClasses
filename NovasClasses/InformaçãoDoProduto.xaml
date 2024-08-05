@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NovasClasses.InformacoesProduto"
+             BackgroundColor="#556677"
+             Title="INFORMAÇÕES DO PRODUTO">
+
+    <Grid Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Label Text="INFORMAÇÕES DO PRODUTO"
+               FontSize="Large"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               Grid.Row="0" />
+
+        <StackLayout Grid.Row="1" 
+                     Spacing="20">
+            <StackLayout Orientation="Horizontal">
+                <Label Text="MARCA:" 
+                       VerticalOptions="Center" />
+                <Entry x:Name="MarcaEntry" 
+                       WidthRequest="200" 
+                       BackgroundColor="LightGray" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="TAMANHO:" 
+                       VerticalOptions="Center" />
+                <Entry x:Name="TamanhoEntry" 
+                       WidthRequest="200" 
+                       BackgroundColor="LightGray" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="PREÇO:" 
+                       VerticalOptions="Center" />
+                <Entry x:Name="PrecoEntry" 
+                       WidthRequest="200" 
+                       BackgroundColor="LightGray" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Nº DO PRODUTO:" 
+                       VerticalOptions="Center" />
+                <Entry x:Name="NumeroProdutoEntry" 
+                       WidthRequest="200" 
+                       BackgroundColor="LightGray" />
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout Grid.Row="2" 
+                     Orientation="Horizontal"
+                     HorizontalOptions="Center"
+                     Spacing="20">
+            <Button Text="COMPRAR"
+                    BackgroundColor="Gray"
+                    TextColor="Black"
+                    Clicked="OnComprarClicked" />
+            <Button Text="CANCELAR"
+                    BackgroundColor="Red"
+                    TextColor="White"
+                    Clicked="OnCancelarClicked" />
+        </StackLayout>
+    </Grid>
+</ContentPage>

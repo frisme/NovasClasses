@@ -1,7 +1,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NovasClasses.EstoqueDeCompras">
-    <Grid BackgroundColor="Gray">
+    <Grid x:Name="SucoDeAbacate"
+          BackgroundColor="Gray">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
@@ -13,18 +14,29 @@
         </Grid.ColumnDefinitions>
 
         <Grid>
-            </Grid>
+            <!-- Botões dos quadrados serão adicionados programaticamente aqui -->
+        </Grid>
 
-        <Popup x:Name="MeusPopup" 
-               IsOpen="False" 
-               BackgroundColor="White">
-            <StackLayout>
-                <Label Text="O que deseja fazer com esse produto?" />
-                <Button Text="Levar à Área de Confecção" 
-                        Clicked="LevarParaConfeccao" />
-                <Button Text="Descartar do Estoque" 
-                        Clicked="Descartar" />
-            </StackLayout>
-        </Popup>
+        <!-- Popup substituído por ContentView -->
+        <ContentView x:Name="MeusPopup" 
+                     IsVisible="False"
+                     BackgroundColor="White"
+                     Grid.Row="0"
+                     Grid.ColumnSpan="3"
+                     Padding="20"
+                     VerticalOptions="Center"
+                     HorizontalOptions="Center">
+            <Frame BackgroundColor="White"
+                   HasShadow="True"
+                   CornerRadius="10">
+                <StackLayout>
+                    <Label Text="O que deseja fazer com esse produto?" />
+                    <Button Text="Levar à Área de Confecção" 
+                            Clicked="LevarParaConfeccao" />
+                    <Button Text="Descartar do Estoque" 
+                            Clicked="Descartar" />
+                </StackLayout>
+            </Frame>
+        </ContentView>
     </Grid>
 </ContentPage>
