@@ -7,19 +7,29 @@
 
     <ContentPage.Content>
 
-        <Grid BackgroundColor="#556577">
+        <ScrollView>
         
-            <StackLayout HorizontalOptions="Center" 
-                         VerticalOptions="Center">
+            <VerticalStackLayout Padding="20"
+                                 Spacing="20">
+                
+
+                <Button Text="voltar"
+                    Clicked="VoltarClicked"
+                    BackgroundColor="Orange"
+                    TextColor="Black"/>
 
                 <Image Source="usuario.jpg"
                        HeightRequest="100"
                        WidthRequest="100" />
 
+                <Label Text="Nome:"/>
+                
                 <Entry x:Name="NomeEntry" 
                        Placeholder="Nome" 
                        BackgroundColor="White" 
                        TextColor="Black" />
+
+                <Label Text="Email:"/>
 
                 <Entry x:Name="EmailEntry" 
                        Placeholder="E-mail" 
@@ -27,16 +37,22 @@
                        BackgroundColor="White" 
                        TextColor="Black" />
 
+                <Label Text="Endereço:"/>
+
                 <Entry x:Name="EnderecoEntry" 
                        Placeholder="Endereço" 
                        BackgroundColor="White" 
                        TextColor="Black" />
+
+                <Label Text="Senha:"/>
 
                 <Entry x:Name="SenhaEntry" 
                        Placeholder="Senha" 
                        IsPassword="True" 
                        BackgroundColor="White" 
                        TextColor="Black" />
+
+                <Label Text="Confirmar Senha:"/>
 
                 <Entry x:Name="ConfirmarSenhaEntry" 
                        Placeholder="Confirmar Senha" 
@@ -47,15 +63,16 @@
                 <Button Text="Cadastrar" 
                         BackgroundColor="#555555" 
                         TextColor="White" 
-                        Clicked="OnCadastrarClicked" />
+                        Clicked="OnSalvarDadosClicked" />
 
                 <Button Text="Voltar" 
                         BackgroundColor="#8B0000" 
                         TextColor="White" 
-                        Clicked="OnVoltarClicked" />
+                        Clicked="OnApagarDadosClicked" />
 
-            </StackLayout>
-        </Grid>
+            </VerticalStackLayout>
+
+        </ScrollView>
 
     </ContentPage.Content>
 </ContentPage>

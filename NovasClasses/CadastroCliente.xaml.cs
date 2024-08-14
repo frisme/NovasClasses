@@ -1,38 +1,80 @@
 using Microsoft.Maui.Controls;
 
-namespace NovasClasses
+namespace NovasClasses;
+
+public partial class CadastroCliente : ContentPage
 {
-    public partial class CadastroCliente : ContentPage
+    public CadastroCliente cliente { get; set; }
+    Controles.ClienteControle clienteControle = new Controles.ClienteControle();
+    public CadastroCliente()
     {
-        public CadastroCliente()
+        InitializeComponent();
+    }
+
+    void VoltarClicked(object sender, EventArgs e)
+    {
+        Application.Current.MainPage = new ListaClientesPage();
+    }
+
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+
+        if (cliente != null)
         {
-            InitializeComponent();
+            NomeEntry.Text = cliente.Nome;
+            EmailEntry.Text = cliente.Email;
+            EnderecoEntry.Text = cliente.Endereço;
+            SenhaEntry.Text = cliente.Senha;
         }
+    }
 
-        private async void OnCadastrarClicked(object sender, EventArgs e)
+    private async void OnApagarDadosClicked(object sender, EventArgs e)
+    {
+        NomeEntry.Text = string.Empty;
+        EmailEntry.Text = string.Empty;
+        EnderecoEntry.Text = string.Empty;
+        SenhaEntry.Text = string.Empty;
+
+    }
+
+    private async void OnSalvarDadosClicked(object sender, EventArgs e)
+    {
+        if (await VerificaSeDadosEstaoCorretos())
         {
-            // Lógica para cadastro
-            string nome = NomeEntry.Text;
-            string email = EmailEntry.Text;
-            string endereco = EnderecoEntry.Text;
-            string senha = SenhaEntry.Text;
-            string confirmarSenha = ConfirmarSenhaEntry.Text;
-
-            if (senha == confirmarSenha)
-            {
-                // Executar lógica de cadastro, por exemplo, enviar dados para um servidor
-                await DisplayAlert("Sucesso", "Cadastro realizado com sucesso!", "OK");
-            }
+            var cliente = new Modelos.Cliente();
+            if (!String.IsNullOrEmpty(NomeEntry.Text))
+                cliente.Id = int.Parse(NomeEntry.Text);
             else
-            {
-                await DisplayAlert("Erro", "As senhas não coincidem", "OK");
-            }
-        }
+                cliente.Id = 0;
+            cliente.Nome = NomeEntry.Text;
+            cliente.Sobrenome = SobrenomeEntry.Text;
+            cliente.Telefone = TelefoneEntry.Text;
 
-        private async void OnVoltarClicked(object sender, EventArgs e)
-        {
-            // Lógica para voltar
-            await Navigation.PopAsync();
+            clienteControle.CriarOuAtualizar(cliente);
+
+            await DisplayAlert("Salvar", "Dados salvos com sucesso!", "OK");
         }
+    }
+    private async Task<bool> VerificaSeDadosEstaoCorretos()
+    {
+        if (String.IsNullOrEmpty(NomeEntry.Text))
+        {
+            await DisplayAlert("Cadastrar", "O campo Nome é obrigatório", "OK");
+            return false;
+        }
+        else if (String.IsNullOrEmpty(SobrenomeEntry.Text))
+        {
+            await DisplayAlert("Cadastrar", "O campo Sobrenome é obrigatório", "OK");
+            return false;
+        }
+        else if (String.IsNullOrEmpty(TelefoneEntry.Text))
+        {
+            await DisplayAlert("Cadastrar", "O campo Telefone é obrigatório", "OK");
+            return false;
+        }
+        else
+            return true;
     }
 }
