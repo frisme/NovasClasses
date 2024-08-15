@@ -1,7 +1,7 @@
 using LiteDB;
 using LiteDBExample.Modelos;
 
-namespace Controles;
+namespace NovasClasses;
 
 public class BaseControle
 {
@@ -28,13 +28,13 @@ public class BaseControle
   
   //----------------------------------------------------------------------------
 
-  public virtual void Apagar(int id)
+  public virtual void Apagar(int Senha)
   {
   }
   
   //----------------------------------------------------------------------------
 
-  public virtual Registro? Ler(int id)
+  public virtual Registro? Ler(int Senha)
   {
     return null;
   }

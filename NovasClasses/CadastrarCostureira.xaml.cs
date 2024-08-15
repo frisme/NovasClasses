@@ -18,7 +18,7 @@ namespace NovasClasses
         private async void OnVoltarClicked(object sender, EventArgs e)
         {
             // Implement your navigation logic here
-            await Navigation.PopAsync();
+            Application.Current.MainPage = new MainPage();
         }
     }
 }

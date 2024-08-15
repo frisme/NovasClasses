@@ -17,8 +17,18 @@
   </Grid.ColumnDefinitions>
   
   
-  
-  
+    <Button Text="Cadastro De Clientes"
+                    BackgroundColor="Gray"
+                    TextColor="Black"
+                    Clicked="FogoGratis"
+                    Grid.Row="0"/>
+
+
+    <Button Text="Cadastro De Costureira"
+                    BackgroundColor="Gray"
+                    TextColor="Black"
+                    Clicked="Juliao"
+                    Grid.Row="1"/>
   </Grid>
 
 </ContentPage>

@@ -1,19 +1,24 @@
+﻿using LiteDBExample.Modelos;
 using Microsoft.Maui.Controls;
+using System;
 
 namespace NovasClasses;
 
 public partial class CadastroCliente : ContentPage
 {
-    public CadastroCliente cliente { get; set; }
-    Controles.ClienteControle clienteControle = new Controles.ClienteControle();
+    Cliente cliente;
+    ClienteControle clienteControle;
+    
     public CadastroCliente()
     {
         InitializeComponent();
+        cliente = new Cliente();
+        clienteControle = new ClienteControle();
     }
 
     void VoltarClicked(object sender, EventArgs e)
     {
-        Application.Current.MainPage = new ListaClientesPage();
+        Application.Current.MainPage = new MainPage();
     }
 
 
@@ -23,10 +28,12 @@ public partial class CadastroCliente : ContentPage
 
         if (cliente != null)
         {
+            IdLabel.Text        = cliente.Id.ToString();
             NomeEntry.Text = cliente.Nome;
             EmailEntry.Text = cliente.Email;
-            EnderecoEntry.Text = cliente.Endereço;
+            EnderecoEntry.Text = cliente.Endereco;
             SenhaEntry.Text = cliente.Senha;
+            ConfirmarSenhaEntry.Text = cliente.ConfirmarSenha;
         }
     }
 
@@ -36,6 +43,7 @@ public partial class CadastroCliente : ContentPage
         EmailEntry.Text = string.Empty;
         EnderecoEntry.Text = string.Empty;
         SenhaEntry.Text = string.Empty;
+        ConfirmarSenhaEntry.Text = string.Empty;
 
     }
 
@@ -43,14 +51,17 @@ public partial class CadastroCliente : ContentPage
     {
         if (await VerificaSeDadosEstaoCorretos())
         {
-            var cliente = new Modelos.Cliente();
+            var cliente = new Cliente();
             if (!String.IsNullOrEmpty(NomeEntry.Text))
-                cliente.Id = int.Parse(NomeEntry.Text);
+            {
+                cliente.Id = int.Parse(IdLabel.Text);
+            }
             else
                 cliente.Id = 0;
             cliente.Nome = NomeEntry.Text;
-            cliente.Sobrenome = SobrenomeEntry.Text;
-            cliente.Telefone = TelefoneEntry.Text;
+            cliente.Email = EmailEntry.Text;
+            cliente.Endereco = EnderecoEntry.Text;
+            cliente.Senha = SenhaEntry.Text;
 
             clienteControle.CriarOuAtualizar(cliente);
 
@@ -64,15 +75,17 @@ public partial class CadastroCliente : ContentPage
             await DisplayAlert("Cadastrar", "O campo Nome é obrigatório", "OK");
             return false;
         }
-        else if (String.IsNullOrEmpty(SobrenomeEntry.Text))
+        else if (String.IsNullOrEmpty(EmailEntry.Text))
         {
-            await DisplayAlert("Cadastrar", "O campo Sobrenome é obrigatório", "OK");
+            await DisplayAlert("Cadastrar", "O campo Email é obrigatório", "OK");
             return false;
         }
-        else if (String.IsNullOrEmpty(TelefoneEntry.Text))
+        else if (String.IsNullOrEmpty(EnderecoEntry.Text))
         {
-            await DisplayAlert("Cadastrar", "O campo Telefone é obrigatório", "OK");
+            await DisplayAlert("Cadastrar", "O campo Endereço é obrigatório", "OK");
             return false;
+
+            
         }
         else
             return true;

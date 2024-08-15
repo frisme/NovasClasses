@@ -71,10 +71,10 @@
 
             <StackLayout>
 
-                <Label Text="Tipo:" 
+                <Label Text="Nome:" 
                        Style="{StaticResource LabelStyle}" />
 
-                <Entry x:Name="TipoEntry" 
+                <Entry x:Name="NomeEntry" 
                        Style="{StaticResource EntryStyle}" />
 
                 
