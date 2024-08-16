@@ -71,14 +71,24 @@
 
             <StackLayout>
 
-                <Label Text="Nome:" 
+                <Label Text="Id:"
+                       TextColor="Black" 
+                       FontSize="Large"/>
+
+                <Label x:Name="Id"
+                       Text="Id:" 
                        Style="{StaticResource LabelStyle}" />
 
-                <Entry x:Name="NomeEntry" 
+                <Label x:Name="Name"
+                       Text="Nome:" 
+                       Style="{StaticResource LabelStyle}" />
+
+                <Entry x:Name="NameEntry" 
                        Style="{StaticResource EntryStyle}" />
 
                 
-                <Label Text="Quantidade:" 
+                <Label x:Name="Quantidade"
+                       Text="Quantidade:" 
                        Style="{StaticResource LabelStyle}" />
 
                 <Entry x:Name="QuantidadeEntry" 
@@ -86,19 +96,13 @@
                        Keyboard="Numeric" />
 
                 
-                <Label Text="Fornecedor:" 
+                <Label x:Name="Fornecedor"
+                       Text="Fornecedor:" 
                        Style="{StaticResource LabelStyle}" />
 
                 <Entry x:Name="FornecedorEntry" 
                        Style="{StaticResource EntryStyle}" />
 
-                
-                <Label Text="Id:" 
-                       Style="{StaticResource LabelStyle}" />
-
-                <Entry x:Name="IdEntry" 
-                       Style="{StaticResource EntryStyle}" 
-                       Keyboard="Numeric" />
 
             </StackLayout>
 
@@ -111,13 +115,18 @@
                         Style="{StaticResource ButtonStyle}" 
                         BackgroundColor="Gray" 
                         TextColor="White" 
-                        Clicked="OnConfirmarClicked"/>
+                        Clicked="Confirmar"/>
+
+                <Button Text="Apagar Dados"
+                    BackgroundColor="Gray"
+                    TextColor="Black"
+                    Clicked="Apagar" />
 
                 <Button Text="Voltar" 
                         Style="{StaticResource ButtonStyle}" 
                         BackgroundColor="DarkRed" 
                         TextColor="White" 
-                        Clicked="OnVoltarClicked" 
+                        Clicked="Voltar" 
                         Margin="20,0,0,0"/>
 
             </StackLayout>

@@ -4,7 +4,7 @@ using Microsoft.Maui.Controls;
 
 namespace NovasClasses
 {
-    public partial class Costureira : ContentPage
+    public partial class Costureiras : ContentPage
     {
         public ICommand EditarTipoCommand { get; }
         public ICommand EditarQuantidadeCommand { get; }
@@ -13,7 +13,7 @@ namespace NovasClasses
         public ICommand ConfirmarCommand { get; }
         public ICommand VoltarCommand { get; }
 
-        public Costureira()
+        public Costureiras()
         {
             InitializeComponent();
 
