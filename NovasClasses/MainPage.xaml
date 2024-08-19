@@ -25,10 +25,16 @@
 
 
     <Button Text="Cadastro De Costureira"
-                    BackgroundColor="Gray"
+                    BackgroundColor="Green"
                     TextColor="Black"
                     Clicked="Juliao"
                     Grid.Row="1"/>
+        
+    <Button Text="Cadastro De Costureira"
+                    BackgroundColor="Red"
+                    TextColor="Black"
+                    Clicked="Queijo"
+                    Grid.Row="2"/>
   </Grid>
 
 </ContentPage>

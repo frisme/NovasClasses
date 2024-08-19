@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NovasClasses.CadastrarCostureira"
@@ -60,7 +59,7 @@
     <ContentPage.Content>
 
         <StackLayout Padding="30" 
-                     BackgroundColor="#3C3F41">
+                     BackgroundColor="#556677">
 
             <Label Text="Cadastrar Costureira"
                    HorizontalOptions="Center"
@@ -113,12 +112,12 @@
 
                 <Button Text="Confirmar" 
                         Style="{StaticResource ButtonStyle}" 
-                        BackgroundColor="Gray" 
+                        BackgroundColor="Green" 
                         TextColor="White" 
                         Clicked="Confirmar"/>
 
                 <Button Text="Apagar Dados"
-                    BackgroundColor="Gray"
+                    BackgroundColor="Red"
                     TextColor="Black"
                     Clicked="Apagar" />
 

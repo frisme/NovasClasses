@@ -5,59 +5,63 @@
              BackgroundColor="#556677"
              Title="CADASTRARR ITEM ESTOQUE">
 
-    <Grid Padding="20">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
+          <ContentPage.Content>
 
-        <Label Text="CADASTRARR ITEM ESTOQUE"
-               FontSize="Large"
-               FontAttributes="Bold"
-               HorizontalOptions="Center"
-               Grid.Row="0" />
+       <ScrollView>
 
-        <StackLayout Grid.Row="1" 
-                     Spacing="20">
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Tipo:" 
-                       VerticalOptions="Center" />
-                <Entry x:Name="TipoEntry" 
-                       WidthRequest="200" />
-            </StackLayout>
+            <VerticalStackLayout Padding="20"
+                                 Spacing="20">
+                
 
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Quantidade:" 
-                       VerticalOptions="Center" />
-                <Entry x:Name="QuantidadeEntry" 
-                       WidthRequest="200" 
-                       Keyboard="Numeric" />
-            </StackLayout>
-
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Fornecedor:" 
-                       VerticalOptions="Center" />
-                <Entry x:Name="FornecedorEntry" 
-                       WidthRequest="200" />
-            </StackLayout>
-            
-        </StackLayout>
-
-        <StackLayout Grid.Row="2" 
-                     Orientation="Horizontal"
-                     HorizontalOptions="Center"
-                     Spacing="20">
-            <Button Text="CONFIRMAR"
-                    BackgroundColor="Gray"
-                    TextColor="Black"
-                    Clicked="OnConfirmarClicked" />
-            <Button Text="VOLTAR"
+                <Label Text="CADASTRO DE ITEMS EM ESTOQUE"
                     BackgroundColor="Red"
-                    TextColor="White"
-                    Clicked="OnVoltarClicked" />
-        </StackLayout>
+                    TextColor="Black"/>
 
-    </Grid>
+                <Label Text="Id:"/>
+                
+            <Label x:Name="IdItem"/>
 
+                <Label Text="Nome:"/>
+                
+                <Entry x:Name="TipoEntry" 
+                       Placeholder="Tipo" 
+                       BackgroundColor="White" 
+                       TextColor="Black"/>
+
+                <Label Text="Quantidade:"/>
+
+                <Entry x:Name="QuantidadeEntry" 
+                       Placeholder="E-mail" 
+                       Keyboard="Email" 
+                       BackgroundColor="White" 
+                       TextColor="Black"/>
+
+                <Label Text="Fornecedor:"/>
+
+                <Entry x:Name="FornecedorEntry" 
+                       Placeholder="Endereço" 
+                       BackgroundColor="White" 
+                       TextColor="Black"/>
+
+
+                <Button Text="Cadastrar" 
+                        BackgroundColor="#555555" 
+                        TextColor="White" 
+                        Clicked="ConfirmarClicked" />
+
+                <Button Text="Apagar Dados" 
+                        BackgroundColor="#8B0000" 
+                        TextColor="White" 
+                        Clicked="ApagarOsDados" />
+
+                <Button Text="Voltar" 
+                        BackgroundColor="#8B0000" 
+                        TextColor="White" 
+                        Clicked="VoltarClicked" />
+
+            </VerticalStackLayout>
+
+        </ScrollView>
+
+    </ContentPage.Content>
 </ContentPage>

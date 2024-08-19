@@ -1,30 +1,88 @@
+using LiteDBExample.Modelos;
 using Microsoft.Maui.Controls;
+using System;
 
-namespace NovasClasses
+namespace NovasClasses;
+
+public partial class CadastrarMateriaPrima : ContentPage
 {
-    public partial class CadastrarMateriaPrima : ContentPage
+    MateriaPrima materiaprima;
+        MateriaprimaControle materiaprimaControle;
+    
+    public CadastrarMateriaPrima()
     {
-        public CadastrarMateriaPrima()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
+        materiaprima = new MateriaPrima();
+        materiaprimaControle = new MateriaprimaControle();
+    }
 
-        private async void OnConfirmarClicked(object sender, EventArgs e)
-        {
-            // Lógica para confirmação
-            string tipo = TipoEntry.Text;
-            string quantidade = QuantidadeEntry.Text;
-            string fornecedor = FornecedorEntry.Text;
-            string id = IdEntry.Text;
+    void VoltarClicked(object sender, EventArgs e)
+    {
+        Application.Current.MainPage = new MainPage();
+    }
 
-            // Executar lógica de confirmação, por exemplo, enviar dados para um servidor
-            await DisplayAlert("Sucesso", "Dados cadastrados com sucesso!", "OK");
-        }
 
-        private async void OnVoltarClicked(object sender, EventArgs e)
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+
+        if (materiaprima != null)
         {
-            // Lógica para voltar
-            await Navigation.PopAsync();
+            IdItem.Text        = materiaprima.Id.ToString();
+            TipoEntry.Text = materiaprima.Tipo;
+            QuantidadeEntry.Text = materiaprima.Quantidade;
+            FornecedorEntry.Text = materiaprima.Fornecedor;
         }
+    }
+
+    private async void ApagarOsDados(object sender, EventArgs e)
+    {
+        TipoEntry.Text = string.Empty;
+        QuantidadeEntry.Text = string.Empty;
+        FornecedorEntry.Text = string.Empty;
+
+    }
+
+    private async void ConfirmarClicked(object sender, EventArgs e)
+    {
+        if (await VerificaSeDadosEstaoCorretos())
+        {
+            var materiaprima = new MateriaPrima();
+            if (!String.IsNullOrEmpty(TipoEntry.Text))
+            {
+                materiaprima.Id = int.Parse(IdItem.Text);
+            }
+            else
+                materiaprima.Id = 0;
+            materiaprima.Tipo = TipoEntry.Text;
+            materiaprima.Quantidade = QuantidadeEntry.Text;
+            materiaprima.Fornecedor = FornecedorEntry.Text;
+
+            materiaprimaControle.CriarOuAtualizar(materiaprima);
+
+            await DisplayAlert("Salvar", "Dados salvos com sucesso!", "OK");
+        }
+    }
+    private async Task<bool> VerificaSeDadosEstaoCorretos()
+    {
+        if (String.IsNullOrEmpty(TipoEntry.Text))
+        {
+            await DisplayAlert("Cadastrar", "O campo Tipo é obrigatório", "OK");
+            return false;
+        }
+        else if (String.IsNullOrEmpty(QuantidadeEntry.Text))
+        {
+            await DisplayAlert("Cadastrar", "O campo Quantidade é obrigatório", "OK");
+            return false;
+        }
+        else if (String.IsNullOrEmpty(FornecedorEntry.Text))
+        {
+            await DisplayAlert("Cadastrar", "O campo Fornecedor é obrigatório", "OK");
+            return false;
+
+            
+        }
+        else
+            return true;
     }
 }
