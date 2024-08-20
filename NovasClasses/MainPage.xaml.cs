@@ -24,4 +24,9 @@ public partial class MainPage : ContentPage
 {
 		Application.Current.MainPage = new CadastrarItemEstoque();
 }
+
+    private void Carne(object sender, EventArgs e)
+{
+		Application.Current.MainPage = new CadastrarMateriaPrima();
+}
 }

@@ -5,8 +5,8 @@ namespace LiteDBExample.Modelos;
 public class MateriaPrima : Registro
 {
   [BsonId]
-  public string Tipo {get; set ;}
+  public string TipoMP {get; set ;}
   public int IdMP { get; set; }
-  public string Fornecedor { get; set; }
-  public string Quantidade { get; set;}
+  public string FornecedorMP { get; set; }
+  public string QuantidadeMP { get; set;}
 }

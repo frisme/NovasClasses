@@ -5,92 +5,123 @@
              x:Class="NovasClasses.CadastrarMateriaPrima"
              Title="Cadastrar Matéria Prima">
 
+    <ContentPage.Resources>
+
+        <ResourceDictionary>
+
+            <Style x:Key="LabelStyle" 
+                   TargetType="Label">
+
+                <Setter Property="TextColor" 
+                        Value="Black" />
+
+                <Setter Property="FontSize" 
+                        Value="Medium" />
+
+                <Setter Property="VerticalOptions" 
+                        Value="Center" />
+
+            </Style>
+
+            <Style x:Key="EntryStyle" 
+                   TargetType="Entry">
+
+                <Setter Property="BackgroundColor" 
+                        Value="White" />
+
+                <Setter Property="HeightRequest" 
+                        Value="40" />
+
+                <Setter Property="Margin" 
+                        Value="0,10,0,10" />
+
+            </Style>
+
+            <Style x:Key="ButtonStyle" 
+                   TargetType="Button">
+
+                <Setter Property="HeightRequest" 
+                        Value="50" />
+
+                <Setter Property="CornerRadius" 
+                        Value="10" />
+
+                <Setter Property="FontAttributes" 
+                        Value="Bold" />
+
+            </Style>
+
+        </ResourceDictionary>
+
+    </ContentPage.Resources>
+
+
     <ContentPage.Content>
 
-        <Grid BackgroundColor="#556577">
+        <StackLayout Padding="30" 
+                     BackgroundColor="#3C3F41">
 
-            <StackLayout HorizontalOptions="Center" 
-                         VerticalOptions="Center" 
-                         Padding="20" 
-                         Spacing="10">
+            <Label Text="Cadastro de Matéria Prima"
+                   HorizontalOptions="Center"
+                   TextColor="Black"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   Margin="0,0,0,30" />
 
-                <Label Text="CADASTRAR MATÉRIA PRIMA" 
-                       FontSize="Large" 
+            <StackLayout>
+
+                <Label Text="Id:"
                        TextColor="Black" 
-                       HorizontalOptions="Center" />
+                       FontSize="Large"/>
+               
+                <Label x:Name="IdMP"
+                       Style="{StaticResource LabelStyle}" />
 
+                <Label Text="Tipo:" 
+                       Style="{StaticResource LabelStyle}" />
 
-                <StackLayout Spacing="5">
-
-                    <Label Text="Id:"
-                           x:Name="IdMP"  
-                           TextColor="Black"/>
-
-                    <Label Text="Tipo:" 
-                           TextColor="Black"/>
-
-                    <Entry x:Name="TipoEntry" 
-                           Placeholder="" 
-                           BackgroundColor="White" 
-                           TextColor="Black" />
-
-                </StackLayout>
+                <Entry x:Name="TipoEntry" 
+                       Style="{StaticResource EntryStyle}" />
 
                 
-                <StackLayout Spacing="5">
+                <Label Text="Quantidade:" 
+                       Style="{StaticResource LabelStyle}" />
 
-                    <Label Text="Quantidade:" 
-                           TextColor="Black"/>
-
-                    <Entry x:Name="QuantidadeEntry" 
-                           Placeholder="" 
-                           BackgroundColor="White" 
-                           TextColor="Black" />
-
-                </StackLayout>
+                <Entry x:Name="QuantidadeEntry" 
+                       Style="{StaticResource EntryStyle}" 
+                       Keyboard="Email" />
 
                 
-                <StackLayout Spacing="5">
+                <Label Text="Fornecedor:" 
+                       Style="{StaticResource LabelStyle}" />
 
-                    <Label Text="Fornecedor:" 
-                           TextColor="Black"/>
-
-                    <Entry x:Name="FornecedorEntry" 
-                           Placeholder="" 
-                           BackgroundColor="White" 
-                           TextColor="Black" />
-
-                </StackLayout>
-
-                
-                <StackLayout Spacing="5">
-
-
-                </StackLayout>
-
-
-                <StackLayout Orientation="Horizontal" 
-                             Spacing="10">
-
-                    <Button Text="CONFIRMAR" 
-                            BackgroundColor="#555555" 
-                            TextColor="White" 
-                            HorizontalOptions="FillAndExpand" 
-                            Clicked="Certo"/>
-
-                    <Button Text="VOLTAR" 
-                            BackgroundColor="#8B0000" 
-                            TextColor="White" 
-                            HorizontalOptions="FillAndExpand" 
-                            Clicked="Sair"/>
-
-                </StackLayout>
+                <Entry x:Name="FornecedorEntry" 
+                       Style="{StaticResource EntryStyle}" />
 
             </StackLayout>
 
-        </Grid>
+
+            <StackLayout Orientation="Horizontal" 
+                         HorizontalOptions="Center" 
+                         Margin="0,30,0,0">
+
+                <Button Text="Confirmar" 
+                        Style="{StaticResource ButtonStyle}" 
+                        BackgroundColor="Gray" 
+                        TextColor="White" 
+                        Clicked="Certo"/>
+
+                <Button Text="Voltar" 
+                        Style="{StaticResource ButtonStyle}" 
+                        BackgroundColor="DarkRed" 
+                        TextColor="White" 
+                        Clicked="Sair" 
+                        Margin="20,0,0,0"/>
+
+            </StackLayout>
+
+        </StackLayout>
 
     </ContentPage.Content>
 
 </ContentPage>
-

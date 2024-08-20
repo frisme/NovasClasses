@@ -3,21 +3,21 @@ using LiteDB;
 
 namespace NovasClasses;
 
-public class MateriaprimaControle : BaseControle
+public class MateriaPrimaControle : BaseControle
 {
   //----------------------------------------------------------------------------
 
-  public MateriaprimaControle() : base()
+  public MateriaPrimaControle() : base()
   {
     NomeDaTabela = "Materia Prima";
   }
 
   //----------------------------------------------------------------------------
 
-  public virtual Registro? Ler(int idMateriaPrima)
+  public virtual Registro? Ler(int idmateriaprima)
   {
     var collection = liteDB.GetCollection<MateriaPrima>(NomeDaTabela);
-    return collection.FindOne(d => d.Id == idMateriaPrima);
+    return collection.FindOne(d => d.IdMP == idmateriaprima);
   }
 
   //----------------------------------------------------------------------------
@@ -30,10 +30,10 @@ public class MateriaprimaControle : BaseControle
 
   //----------------------------------------------------------------------------
 
-  public virtual void Apagar(int idMateriaPrima)
+  public virtual void Apagar(int idmateriaprima)
   {
     var collection = liteDB.GetCollection<MateriaPrima>(NomeDaTabela);
-    collection.Delete(idMateriaPrima);
+    collection.Delete(idmateriaprima);
   }
 
   //----------------------------------------------------------------------------

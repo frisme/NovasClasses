@@ -7,16 +7,16 @@ namespace NovasClasses;
 public partial class CadastrarMateriaPrima : ContentPage
 {
     MateriaPrima materiaprima;
-        MateriaprimaControle materiaprimaControle;
+        MateriaPrimaControle materiaprimaControle;
     
     public CadastrarMateriaPrima()
     {
         InitializeComponent();
         materiaprima = new MateriaPrima();
-        materiaprimaControle = new MateriaprimaControle();
+        materiaprimaControle = new MateriaPrimaControle();
     }
 
-    void VoltarClicked(object sender, EventArgs e)
+    void Sair(object sender, EventArgs e)
     {
         Application.Current.MainPage = new MainPage();
     }
@@ -28,10 +28,10 @@ public partial class CadastrarMateriaPrima : ContentPage
 
         if (materiaprima != null)
         {
-            IdItem.Text        = materiaprima.Id.ToString();
-            TipoEntry.Text = materiaprima.Tipo;
-            QuantidadeEntry.Text = materiaprima.Quantidade;
-            FornecedorEntry.Text = materiaprima.Fornecedor;
+            IdMP.Text        = materiaprima.IdMP.ToString();
+            TipoEntry.Text = materiaprima.TipoMP;
+            QuantidadeEntry.Text = materiaprima.QuantidadeMP;
+            FornecedorEntry.Text = materiaprima.FornecedorMP;
         }
     }
 
@@ -43,20 +43,20 @@ public partial class CadastrarMateriaPrima : ContentPage
 
     }
 
-    private async void ConfirmarClicked(object sender, EventArgs e)
+    private async void Certo(object sender, EventArgs e)
     {
         if (await VerificaSeDadosEstaoCorretos())
         {
             var materiaprima = new MateriaPrima();
             if (!String.IsNullOrEmpty(TipoEntry.Text))
             {
-                materiaprima.Id = int.Parse(IdItem.Text);
+                materiaprima.IdMP = int.Parse(IdMP.Text);
             }
             else
-                materiaprima.Id = 0;
-            materiaprima.Tipo = TipoEntry.Text;
-            materiaprima.Quantidade = QuantidadeEntry.Text;
-            materiaprima.Fornecedor = FornecedorEntry.Text;
+                materiaprima.IdMP = 0;
+            materiaprima.TipoMP = TipoEntry.Text;
+            materiaprima.QuantidadeMP = QuantidadeEntry.Text;
+            materiaprima.FornecedorMP = FornecedorEntry.Text;
 
             materiaprimaControle.CriarOuAtualizar(materiaprima);
 

@@ -35,6 +35,12 @@
                     TextColor="Black"
                     Clicked="Queijo"
                     Grid.Row="2"/>
+
+    <Button Text="Cadastro De Matéria Prima"
+                    BackgroundColor="Yellow"
+                    TextColor="Black"
+                    Clicked="Carne"
+                    Grid.Row="3"/>
   </Grid>
 
 </ContentPage>
