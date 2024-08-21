@@ -70,41 +70,39 @@
 
             <StackLayout>
 
-                <Label Text="Nome:" 
-                       Style="{StaticResource LabelStyle}" />
+                <Label Text="Id:" 
+                       Style="{StaticResource LabelStyle}"/>            
+              
+                <Label x:Name="SeuIdEntry" 
+                       Style="{StaticResource LabelStyle}"/>
 
-                <Entry x:Name="NomeEntry" 
-                       Style="{StaticResource EntryStyle}" />
+                <Label Text="Nome:" 
+                       Style="{StaticResource LabelStyle}"/>
+
+                <Entry x:Name="SeuNomeEntry" 
+                       Style="{StaticResource EntryStyle}"/>
 
                 
                 <Label Text="Email:" 
-                       Style="{StaticResource LabelStyle}" />
+                       Style="{StaticResource LabelStyle}"/>
 
-                <Entry x:Name="EmailEntry" 
+                <Entry x:Name="SeuEmailEntry" 
                        Style="{StaticResource EntryStyle}" 
-                       Keyboard="Email" />
+                       Keyboard="Email"/>
 
                 
                 <Label Text="Endereço:" 
-                       Style="{StaticResource LabelStyle}" />
+                       Style="{StaticResource LabelStyle}"/>
 
-                <Entry x:Name="EnderecoEntry" 
-                       Style="{StaticResource EntryStyle}" />
+                <Entry x:Name="SeuEnderecoEntry" 
+                       Style="{StaticResource EntryStyle}"/>
 
                 
                 <Label Text="Produtos:" 
-                       Style="{StaticResource LabelStyle}" />
+                       Style="{StaticResource LabelStyle}"/>
 
-                <Entry x:Name="ProdutosEntry" 
-                       Style="{StaticResource EntryStyle}" />
-
-                
-                <Label Text="Id:" 
-                       Style="{StaticResource LabelStyle}" />
-
-                <Entry x:Name="IdEntry" 
-                       Style="{StaticResource EntryStyle}" 
-                       Keyboard="Numeric" />
+                <Entry x:Name="SeusProdutosEntry" 
+                       Style="{StaticResource EntryStyle}"/>
 
             </StackLayout>
 
@@ -115,15 +113,22 @@
 
                 <Button Text="Confirmar" 
                         Style="{StaticResource ButtonStyle}" 
-                        BackgroundColor="Gray" 
+                        BackgroundColor="#555555" 
                         TextColor="White" 
-                        Clicked="OnConfirmarClicked"/>
+                        Clicked="ClicouConfirma"/>
 
-                <Button Text="Voltar" 
+                <Button Text="Apagar Dados" 
                         Style="{StaticResource ButtonStyle}" 
                         BackgroundColor="DarkRed" 
                         TextColor="White" 
-                        Clicked="OnVoltarClicked" 
+                        Clicked="Deletado" 
+                        Margin="20,0,0,0"/>
+
+                <Button Text="Voltar" 
+                        Style="{StaticResource ButtonStyle}" 
+                        BackgroundColor="Black" 
+                        TextColor="White" 
+                        Clicked="Volte" 
                         Margin="20,0,0,0"/>
 
             </StackLayout>

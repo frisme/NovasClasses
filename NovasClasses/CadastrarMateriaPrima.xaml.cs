@@ -35,7 +35,7 @@ public partial class CadastrarMateriaPrima : ContentPage
         }
     }
 
-    private async void ApagarOsDados(object sender, EventArgs e)
+    private async void DeletarDados(object sender, EventArgs e)
     {
         TipoEntry.Text = string.Empty;
         QuantidadeEntry.Text = string.Empty;

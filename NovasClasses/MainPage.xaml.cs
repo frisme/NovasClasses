@@ -29,4 +29,12 @@ public partial class MainPage : ContentPage
 {
 		Application.Current.MainPage = new CadastrarMateriaPrima();
 }
+	private void SergioPasteis(object sender, EventArgs e)
+{
+		Application.Current.MainPage = new CadastroFornecedor();
+}
+	private void LanchesDoBob(object sender, EventArgs e)
+{
+		Application.Current.MainPage = new CadastroFornecedor();
+}
 }

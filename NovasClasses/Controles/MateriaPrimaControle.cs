@@ -9,7 +9,7 @@ public class MateriaPrimaControle : BaseControle
 
   public MateriaPrimaControle() : base()
   {
-    NomeDaTabela = "Materia Prima";
+    NomeDaTabela = "MateriaPrima";
   }
 
   //----------------------------------------------------------------------------

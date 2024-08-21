@@ -112,18 +112,18 @@
 
                 <Button Text="Confirmar" 
                         Style="{StaticResource ButtonStyle}" 
-                        BackgroundColor="Green" 
+                        BackgroundColor="#555555" 
                         TextColor="White" 
                         Clicked="Confirmar"/>
 
                 <Button Text="Apagar Dados"
-                    BackgroundColor="Red"
-                    TextColor="Black"
-                    Clicked="Apagar" />
+                    BackgroundColor="DarkRed"
+                    TextColor="White"
+                    Clicked="Apagar"/>
 
                 <Button Text="Voltar" 
                         Style="{StaticResource ButtonStyle}" 
-                        BackgroundColor="DarkRed" 
+                        BackgroundColor="Black" 
                         TextColor="White" 
                         Clicked="Voltar" 
                         Margin="20,0,0,0"/>

@@ -69,12 +69,12 @@
                         Clicked="OnSalvarDadosClicked" />
 
                 <Button Text="Apagar Dados" 
-                        BackgroundColor="#8B0000" 
+                        BackgroundColor="DarkRed" 
                         TextColor="White" 
                         Clicked="OnApagarDadosClicked" />
 
                 <Button Text="Voltar" 
-                        BackgroundColor="#8B0000" 
+                        BackgroundColor="Black" 
                         TextColor="White" 
                         Clicked="VoltarClicked" />
 

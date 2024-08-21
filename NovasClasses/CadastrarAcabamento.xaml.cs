@@ -1,40 +1,88 @@
-using System.Windows.Input;
+using LiteDBExample.Modelos;
 using Microsoft.Maui.Controls;
+using System;
 
-namespace NovasClasses
+namespace NovasClasses;
+
+public partial class CadastrarAcabamento : ContentPage
 {
-    public partial class CadastrarAcabamento : ContentPage
+    Acabamento acabamento;
+    AcabamentoControle acabamentoControle;
+    
+    public CadastrarAcabamento()
     {
-        public ICommand ConfirmarCommand { get; }
-        public ICommand VoltarCommand { get; }
+        InitializeComponent();
+        acabamento = new Acabamento();
+        acabamentoControle = new AcabamentoControle();
+    }
 
-        public CadastrarAcabamento()
+    void BAACK(object sender, EventArgs e)
+    {
+        Application.Current.MainPage = new MainPage();
+    }
+
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+
+        if (acabamento != null)
         {
-            InitializeComponent();
-
-            ConfirmarCommand = new Command(OnConfirmar);
-            VoltarCommand = new Command(OnVoltar);
-
-            BindingContext = this;
+            IdEntry.Text        = acabamento.Id.ToString();
+            TipoEntry.Text = acabamento.Tipo;
+            QuantidadeEntry.Text = acabamento.Quantidade;
+            CorEntry.Text = acabamento.Cor;
         }
+    }
 
-        private async void OnConfirmar()
+    private async void DELETETHIS(object sender, EventArgs e)
+    {
+        TipoEntry.Text = string.Empty;
+        QuantidadeEntry.Text = string.Empty;
+        CorEntry.Text = string.Empty;
+
+    }
+
+    private async void CLICKHERE(object sender, EventArgs e)
+    {
+        if (await VerificaSeDadosEstaoCorretos())
         {
-            // Lógica para confirmar
-            string tipo = TipoEntry.Text;
-            string quantidade = QuantidadeEntry.Text;
-            string cor = CorEntry.Text;
-            string id = IdEntry.Text;
+            var acabamento = new Acabamento();
+            if (!String.IsNullOrEmpty(TipoEntry.Text))
+            {
+                acabamento.Id = int.Parse(IdEntry.Text);
+            }
+            else
+                acabamento.Id = 0;
+            acabamento.Tipo = TipoEntry.Text;
+            acabamento.Quantidade = QuantidadeEntry.Text;
+            acabamento.Cor = CorEntry.Text;
 
-            // Adicione sua lógica de confirmação aqui
+            acabamentoControle.CriarOuAtualizar(acabamento);
 
-            await DisplayAlert("Confirmação", "Acabamento cadastrado com sucesso!", "OK");
+            await DisplayAlert("Salvar", "Dados salvos com sucesso!", "OK");
         }
-
-        private async void OnVoltar()
+    }
+    private async Task<bool> VerificaSeDadosEstaoCorretos()
+    {
+        if (String.IsNullOrEmpty(TipoEntry.Text))
         {
-            // Lógica para voltar à página anterior
-            await Navigation.PopAsync();
+            await DisplayAlert("Cadastrar", "O campo Tipo é obrigatório", "OK");
+            return false;
         }
+        else if (String.IsNullOrEmpty(QuantidadeEntry.Text))
+        {
+            await DisplayAlert("Cadastrar", "O campo Quantidade é obrigatório", "OK");
+            return false;
+        }
+        else if (String.IsNullOrEmpty(CorEntry.Text))
+        {
+            await DisplayAlert("Cadastrar", "O campo Cor é obrigatório", "OK");
+            return false;
+
+            
+        }
+        else
+            return true;
     }
 }

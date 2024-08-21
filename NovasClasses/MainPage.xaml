@@ -41,6 +41,20 @@
                     TextColor="Black"
                     Clicked="Carne"
                     Grid.Row="3"/>
+
+    <Button Text="Cadastro De Fornecedor"
+                    BackgroundColor="Blue"
+                    TextColor="Black"
+                    Clicked="SergioPasteis"
+                    Grid.Row="0"
+                    Grid.Column="1"/>
+
+    <Button Text="Cadastro De Acabamento"
+                    BackgroundColor="Black"
+                    TextColor="White"
+                    Clicked="LanchesDoBob"
+                    Grid.Row="1"
+                    Grid.Column="1"/>
   </Grid>
 
 </ContentPage>
