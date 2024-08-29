@@ -30,7 +30,7 @@
                     Clicked="Juliao"
                     Grid.Row="1"/>
         
-    <Button Text="Cadastro De Costureira"
+    <Button Text="Cadastrar Item Estoque"
                     BackgroundColor="Red"
                     TextColor="Black"
                     Clicked="Queijo"
@@ -54,6 +54,13 @@
                     TextColor="White"
                     Clicked="LanchesDoBob"
                     Grid.Row="1"
+                    Grid.Column="1"/>
+
+    <Button Text="Lista Clientes"
+                    BackgroundColor="Purple"
+                    TextColor="White"
+                    Clicked="MasterAIDS"
+                    Grid.Row="2"
                     Grid.Column="1"/>
   </Grid>
 

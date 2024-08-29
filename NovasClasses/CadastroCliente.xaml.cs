@@ -1,4 +1,4 @@
-﻿using LiteDBExample.Modelos;
+﻿using NovasClasses.Modelos;
 using Microsoft.Maui.Controls;
 using System;
 
@@ -6,7 +6,7 @@ namespace NovasClasses;
 
 public partial class CadastroCliente : ContentPage
 {
-    Cliente cliente;
+    public Cliente cliente;
     ClienteControle clienteControle;
     
     public CadastroCliente()

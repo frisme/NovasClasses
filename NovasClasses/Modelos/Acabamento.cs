@@ -1,6 +1,6 @@
 using LiteDB;
 
-namespace LiteDBExample.Modelos;
+namespace NovasClasses.Modelos;
 
 public class Acabamento : Registro
 {

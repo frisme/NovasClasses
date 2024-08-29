@@ -1,4 +1,6 @@
-﻿namespace NovasClasses;
+﻿using NovasClasses;
+
+namespace NovasClasses;
 
 public partial class MainPage : ContentPage
 {
@@ -36,5 +38,9 @@ public partial class MainPage : ContentPage
 	private void LanchesDoBob(object sender, EventArgs e)
 {
 		Application.Current.MainPage = new CadastroFornecedor();
+}
+	private void MasterAIDS(object sender, EventArgs e)
+{
+		Application.Current.MainPage = new ListaClientesPage();
 }
 }

@@ -1,4 +1,4 @@
-using LiteDBExample.Modelos;
+using NovasClasses.Modelos;
 using LiteDB;
 
 namespace NovasClasses;

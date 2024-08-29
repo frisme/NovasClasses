@@ -1,4 +1,4 @@
-namespace LiteDBExample.Modelos;
+namespace NovasClasses.Modelos;
 
 public class Registro
 {

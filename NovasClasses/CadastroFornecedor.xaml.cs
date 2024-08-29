@@ -1,4 +1,4 @@
-using LiteDBExample.Modelos;
+using NovasClasses.Modelos;
 using Microsoft.Maui.Controls;
 using System;
 
@@ -6,14 +6,12 @@ namespace NovasClasses;
 
 public partial class CadastroFornecedor : ContentPage
 {
-    Fornecedores fornecedores;
-    FornecedoresControle fornecedoresControle;
+    Modelos.Fornecedores fornecedores {get; set;}
+    FornecedoresControle fornecedoresControle = new FornecedoresControle();
     
     public CadastroFornecedor()
     {
         InitializeComponent();
-        fornecedores = new Fornecedores();
-        fornecedoresControle = new FornecedoresControle();
     }
 
     void Volte(object sender, EventArgs e)

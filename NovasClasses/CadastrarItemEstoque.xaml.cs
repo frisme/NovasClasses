@@ -1,4 +1,4 @@
-using LiteDBExample.Modelos;
+using NovasClasses.Modelos;
 using Microsoft.Maui.Controls;
 using System;
 
