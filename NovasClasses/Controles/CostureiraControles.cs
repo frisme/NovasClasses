@@ -9,14 +9,14 @@ public class CostureiraControle : BaseControle
 
   public CostureiraControle() : base()
   {
-    NomeDaTabela = "Costureiras";
+    NomeDaTabela = "Costureira";
   }
 
   //----------------------------------------------------------------------------
 
   public virtual Registro? Ler(int idCostureira)
   {
-    var collection = liteDB.GetCollection<Costureira>(NomeDaTabela);
+    var collection = liteDB.GetCollection<Cliente>(NomeDaTabela);
     return collection.FindOne(d => d.Id == idCostureira);
   }
 

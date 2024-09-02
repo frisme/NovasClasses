@@ -1,5 +1,6 @@
 using LiteDB;
 
+
 namespace NovasClasses.Modelos;
 
 public class Costureira : Registro
