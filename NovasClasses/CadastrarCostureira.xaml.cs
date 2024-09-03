@@ -7,7 +7,7 @@ namespace NovasClasses;
 
 public partial class CadastrarCostureira : ContentPage
 {
-    Costureira costureira;
+    public Costureira costureira;
     CostureiraControle costureiraControle;
     
     public CadastrarCostureira()

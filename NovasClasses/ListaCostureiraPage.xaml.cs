@@ -1,30 +1,23 @@
 using System.Collections;
 using NovasClasses.Modelos;
 using NovasClasses;
-using LiteDB;
-
 namespace NovasClasses;
 public partial class ListaCostureiraPage : ContentPage
 {
-  CostureiraControle costureiraControle;
-  Costureira costureira;
+  NovasClasses.CostureiraControle costureiraControle = new NovasClasses.CostureiraControle();
+  Modelos.Costureira costureira = new Modelos.Costureira();
 
   public ListaCostureiraPage()
 	{
 		InitializeComponent();
-
-        costureira = new Costureira();
-        costureiraControle = new CostureiraControle();
   
     ListaCostureira.ItemsSource = costureiraControle.LerTodos();
 	}
     void SelecionarUmItemDaLista(object sender, SelectedItemChangedEventArgs e)
   {
-        var pagina = new CadastrarCostureira();
-    
-        pagina.costureira = e.SelectedItem as Costureira;
-       
-        Application.Current.MainPage = pagina;
+    var page = new CadastrarCostureira();
+    page.costureira = e.SelectedItem as Costureira;
+    Application.Current.MainPage = page;
   }
 
   void NovaCostureiraClicked(object sender, EventArgs e)
