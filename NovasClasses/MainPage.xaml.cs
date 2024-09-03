@@ -43,4 +43,8 @@ public partial class MainPage : ContentPage
 {
 		Application.Current.MainPage = new ListaClientesPage();
 }
+	private void Doouglass(object sender, EventArgs e)
+{
+		Application.Current.MainPage = new ListaClientesPage();
+}
 }

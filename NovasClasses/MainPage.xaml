@@ -62,6 +62,13 @@
                     Clicked="MasterAIDS"
                     Grid.Row="2"
                     Grid.Column="1"/>
+
+    <Button Text="Lista Clientes"
+                    BackgroundColor="Purple"
+                    TextColor="White"
+                    Clicked="Doouglass"
+                    Grid.Row="3"
+                    Grid.Column="1"/>
   </Grid>
 
 </ContentPage>
